@@ -4,10 +4,12 @@ databases:
   - name: lightdash-database
     ipAllowList: []
     plan: free
+    region: frankfurt
 
 services:
   - type: web
     plan: free
+    region: frankfurt
     env: docker
     name: lightdash-server
     dockerContext: .
