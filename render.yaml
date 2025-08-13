@@ -23,7 +23,6 @@ services:
         value: '["--no-sandbox","--disable-dev-shm-usage","--disable-remote-fonts"]'
       - key: TIMEOUT
         value: "500000"      # 500s total session time (use "-1" to disable)
-    healthCheckPath: /docs 
   - type: web
     plan: starter
     region: frankfurt
