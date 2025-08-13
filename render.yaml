@@ -13,14 +13,17 @@ services:
     plan: starter
     region: frankfurt
     image:
-      url: browserless/chrome:latest
+      url: browserless/chrome:1.60.0
     envVars:
       - key: PORT
         value: "3000"
+      - key: HOST
+        value: "0.0.0.0"
       - key: DEFAULT_LAUNCH_ARGS
-        value: '["--disable-remote-fonts"]'
+        value: '["--no-sandbox","--disable-dev-shm-usage","--disable-remote-fonts"]'
       - key: TIMEOUT
         value: "500000"      # 500s total session time (use "-1" to disable)
+    healthCheckPath: /docs 
   - type: web
     plan: starter
     region: frankfurt
