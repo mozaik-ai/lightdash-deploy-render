@@ -7,8 +7,18 @@ databases:
     region: frankfurt
 
 services:
+  - type: pserv
+    name: headless-browser
+    runtime: image
+    plan: starter
+    region: frankfurt
+    image:
+      url: browserless/chrome:latest
+    envVars:
+      - key: PORT
+        value: 3000
   - type: web
-    plan: free
+    plan: starter
     region: frankfurt
     env: docker
     name: lightdash-server
@@ -41,3 +51,15 @@ services:
         value: true
       - key: LIGHTDASH_SECRET
         generateValue: true
+      - key: HEADLESS_BROWSER_HOST
+        fromService:
+          name: headless-browser
+          type: pserv
+          property: host
+      - key: HEADLESS_BROWSER_PORT
+        fromService:
+          name: headless-browser
+          type: pserv
+          property: port
+      - key: USE_SECURE_BROWSER
+        value: false
