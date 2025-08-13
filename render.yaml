@@ -13,7 +13,7 @@ services:
     plan: starter
     region: frankfurt
     image:
-      url: browserless/chrome:1.60.0
+      url: browserless/chrome:1.60.1-chrome-stable
     envVars:
       - key: PORT
         value: "3000"
