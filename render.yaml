@@ -18,13 +18,9 @@ services:
       - key: PORT
         value: "3000"
       - key: DEFAULT_LAUNCH_ARGS
-        value: '["--no-sandbox","--disable-dev-shm-usage","--disable-remote-fonts"]'
+        value: '["--disable-remote-fonts"]'
       - key: TIMEOUT
         value: "500000"      # 500s total session time (use "-1" to disable)
-      - key: CONCURRENT
-        value: "1"           # avoid queueing while debugging
-      - key: DEBUG
-        value: browserless   # verbose logs in the headless container
   - type: web
     plan: starter
     region: frankfurt
