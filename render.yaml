@@ -17,6 +17,8 @@ services:
     envVars:
       - key: PORT
         value: 3000
+      - key: DEFAULT_LAUNCH_ARGS
+        value: '["--disable-remote-fonts"]'
   - type: web
     plan: starter
     region: frankfurt
