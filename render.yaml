@@ -15,8 +15,10 @@ services:
     image:
       url: browserless/chrome:latest
     envVars:
+      - key: PORT
+        value: "3000"
       - key: DEFAULT_LAUNCH_ARGS
-        value: '["--disable-remote-fonts"]'
+        value: '["--no-sandbox","--disable-dev-shm-usage","--disable-remote-fonts"]'
       - key: TIMEOUT
         value: "500000"      # 500s total session time (use "-1" to disable)
       - key: CONCURRENT
